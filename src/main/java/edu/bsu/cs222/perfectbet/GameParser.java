@@ -15,11 +15,10 @@ public class GameParser {
     }
     public ArrayList<String> HomeTeams() {
         JSONArray homeTeamArray = JsonPath.read(gameJsonArray, "$..home_team");
-        int listLength = homeTeamArray.size();
         ArrayList<String> homeTeamList = new ArrayList<>();
 
-        for (int i = 0; i < listLength; i++) {
-            homeTeamList.add(homeTeamArray.get(i).toString());
+        for (Object homeTeam : homeTeamArray) {
+            homeTeamList.add(homeTeam.toString());
         }
         return homeTeamList;
     }
@@ -28,11 +27,10 @@ public class GameParser {
     //Parses the Inputstream and Returns all the Away Teams as an ArrayList
     public ArrayList<String> AwayTeams() {
         JSONArray awayTeamArray = JsonPath.read(gameJsonArray, "$..away_team");
-        int listLength = awayTeamArray.size();
         ArrayList<String> awayTeamList = new ArrayList<>();
 
-        for (int i = 0; i < listLength; i++) {
-            awayTeamList.add(awayTeamArray.get(i).toString());
+        for (Object awayTeam : awayTeamArray) {
+            awayTeamList.add(awayTeam.toString());
         }
         return awayTeamList;
     }
@@ -41,11 +39,10 @@ public class GameParser {
     //Parses the Inputstream and Returns all the Game IDs for the selected sport as an ArrayList
     public ArrayList<String> GameId() {
         JSONArray gameIdArray = JsonPath.read(gameJsonArray, "$..id");
-        int listLength = gameIdArray.size();
         ArrayList<String> gameIdList = new ArrayList<>();
 
-        for (int i = 0; i < listLength; i++) {
-            gameIdList.add(gameIdArray.get(i).toString());
+        for (Object gameIds : gameIdArray ) {
+            gameIdList.add(gameIds.toString());
         }
         return gameIdList;
     }
