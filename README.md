@@ -6,9 +6,9 @@ This application is for users who are trying to pull live data about sports bett
 This is the v0.1.0 release
 
 ## Authors
-Davis Knight
-Evyn King
-Conner Um
+* Davis Knight
+* Evyn King
+* Conner Um
 
 ## Main Entry Points
 * Main.java: Run to use application with the built GUI
