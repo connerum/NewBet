@@ -58,11 +58,6 @@ public class MainController {
         teamOneOdds_lb.setText(oddsArray.get(0));
         teamTwoOdds_lb.setText(oddsArray.get(1));
 
-
-
-
-
-
     }
 
     @FXML
