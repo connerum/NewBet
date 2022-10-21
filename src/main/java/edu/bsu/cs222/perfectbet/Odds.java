@@ -15,7 +15,12 @@ public class Odds {
         ArrayList<String> oddsList = new ArrayList<>();
 
         for (Object o : oddsArray) {
-            oddsList.add(o.toString());
+            if ((int) o > 0) {
+                oddsList.add("+" + o);
+            }
+            else {
+                oddsList.add(o.toString());
+            }
         }
         return oddsList;
     }

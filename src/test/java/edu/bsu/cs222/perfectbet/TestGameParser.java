@@ -41,12 +41,4 @@ public class TestGameParser {
 
         Assertions.assertFalse(awayTeamNames.toString().contains("Tennessee Titans"));
     }
-
-
-    @Test
-    public void oddsOutput() throws IOException {
-        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
-        JSONArray odds = JsonPath.read(inputStream, "$..price");
-        Assertions.assertEquals(-130, odds.get(0));
-    }
 }
