@@ -8,7 +8,7 @@ import java.net.URLConnection;
 
 
 public class API {
-    /*
+
     public InputStream activeSports() {
         String ApiUrl = "https://api.the-odds-api.com/v4/sports?apiKey=2446fc3219989c3e2fe587845e6ed627";
         try {
@@ -23,7 +23,7 @@ public class API {
         }
     }
 
- */
+
 
     public InputStream activeNflGames(String sportChoice) {
         String ApiUrl = "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?apiKey=2446fc3219989c3e2fe587845e6ed627&regions=us&markets=h2h&bookmakers=draftkings,spreads&oddsFormat=american";

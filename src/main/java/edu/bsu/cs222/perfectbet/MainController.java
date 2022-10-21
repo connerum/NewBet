@@ -47,7 +47,7 @@ public class MainController {
         SportsNameFormatter sportsNameFormatter = new SportsNameFormatter();
         Odds odds = new Odds();
         String newUsersChoice = sportsNameFormatter.NameReformatted(usersSelection);
-        InputStream gameInputStream = api.activeGames(newUsersChoice);
+        InputStream gameInputStream = api.activeNflGames(newUsersChoice);
         gameParser.gamesJson(gameInputStream);
         String id = gameParser.GameId().get(Index);
         InputStream oddsInputStream = api.activeOdds(newUsersChoice, id);
@@ -84,7 +84,7 @@ public class MainController {
         usersSelection = (String) sports_cb.getValue();
         String newUsersChoice = sportsNameFormatter.NameReformatted(usersSelection);
 
-        InputStream gameInputStream = api.activeGames(newUsersChoice);
+        InputStream gameInputStream = api.activeNflGames(newUsersChoice);
         gameParser.gamesJson(gameInputStream);
 
         ArrayList<String> homeTeams = gameParser.HomeTeams();
@@ -113,4 +113,4 @@ public class MainController {
     }
 }
 
-}
+
