@@ -8,7 +8,9 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class MainController {
     public String usersSelection;
@@ -33,7 +35,9 @@ public class MainController {
     @FXML
     private Button calculate_btn;
     @FXML
-    private ImageView refresh_img;
+    private ResourceBundle resources;
+    @FXML
+    private URL location;
 
     @FXML
     protected void calculateOdds() throws IOException {
@@ -46,11 +50,10 @@ public class MainController {
         GameParser gameParser = new GameParser();
         SportsNameFormatter sportsNameFormatter = new SportsNameFormatter();
         Odds odds = new Odds();
-        String newUsersChoice = sportsNameFormatter.NameReformatted(usersSelection);
-        InputStream gameInputStream = api.activeNflGames(newUsersChoice);
+        InputStream gameInputStream = api.activeNflGames(usersSelection);
         gameParser.gamesJson(gameInputStream);
         String id = gameParser.GameId().get(Index);
-        InputStream oddsInputStream = api.activeOdds(newUsersChoice, id);
+        InputStream oddsInputStream = api.activeOdds(usersSelection, id);
         ArrayList<String> oddsArray = odds.oddsParser(oddsInputStream);
 
         home_lb.setText((String) homeTeam_cb.getValue());
@@ -82,9 +85,9 @@ public class MainController {
         SportsNameFormatter sportsNameFormatter = new SportsNameFormatter();
 
         usersSelection = (String) sports_cb.getValue();
-        String newUsersChoice = sportsNameFormatter.NameReformatted(usersSelection);
+        usersSelection = sportsNameFormatter.NameReformatted(usersSelection);
 
-        InputStream gameInputStream = api.activeNflGames(newUsersChoice);
+        InputStream gameInputStream = api.activeNflGames(usersSelection);
         gameParser.gamesJson(gameInputStream);
 
         ArrayList<String> homeTeams = gameParser.HomeTeams();
@@ -100,16 +103,8 @@ public class MainController {
     }
 
     @FXML
-    protected void refreshSports() throws IOException {
-        API api = new API();
-        SportsParser sportsParser = new SportsParser();
-        InputStream activeSportsInputStream = api.activeSports();
-
-        ArrayList<String> activeSports = sportsParser.sports(activeSportsInputStream);
-        sports_cb.getItems().clear();
-        for(int i=0; i < activeSports.size(); i++){
-            sports_cb.getItems().add(activeSports.get(i));
-        }
+    private void initialize() {
+        sports_cb.getItems().add("Football");
     }
 }
 

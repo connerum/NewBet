@@ -60,7 +60,5 @@
             <Font name="Dubai Bold" size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="refresh_img" fitHeight="26.0" fitWidth="27.0" layoutX="491.0" layoutY="74.0" onMouseClicked="#refreshSports" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
    </children>
 </AnchorPane>
