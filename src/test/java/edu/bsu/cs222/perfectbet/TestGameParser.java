@@ -15,8 +15,6 @@ public class TestGameParser {
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
         JSONArray homeTeamNames = JsonPath.read(inputStream, "$..home_team");
 
-        Assertions.assertEquals("Arizona Cardinals", homeTeamNames.get(0));
-
         Assertions.assertTrue(homeTeamNames.toString().contains("Arizona Cardinals"));
     }
 
