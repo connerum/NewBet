@@ -6,15 +6,6 @@ public class SportsNameFormatter {
         if (userChoice.contains("Football")) {
             return "americanfootball";
         }
-        else if (userChoice.contains("Baseball")){
-            return "baseball_mlb";
-        }
-        else if (userChoice.contains("Ice Hockey")) {
-            return "icehockey";
-        }
-        else if (userChoice.contains("Mixed Martial Arts")) {
-            return "mma_mixed_martial_arts";
-        }
         else {
             return userChoice;
         }
