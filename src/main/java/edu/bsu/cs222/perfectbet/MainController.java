@@ -34,10 +34,7 @@ public class MainController {
 
     @FXML
     private Button calculate_btn;
-    @FXML
-    private ResourceBundle resources;
-    @FXML
-    private URL location;
+
 
     @FXML
     protected void calculateOdds() throws IOException {
