@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -40,22 +39,22 @@
             <Font name="Dubai Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="home_lb" layoutX="321.0" layoutY="184.0" text="Home">
+      <Label fx:id="home_lb" layoutX="331.0" layoutY="184.0" text="Home">
          <font>
             <Font name="Dubai Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="away_lb" layoutX="323.0" layoutY="254.0" text="Away">
+      <Label fx:id="away_lb" layoutX="333.0" layoutY="254.0" text="Away">
          <font>
             <Font name="Dubai Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="teamOneOdds_lb" layoutX="414.0" layoutY="215.0" text="0">
+      <Label fx:id="teamOneOdds_lb" layoutX="407.0" layoutY="215.0" text="0">
          <font>
             <Font name="Dubai Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="teamTwoOdds_lb" layoutX="414.0" layoutY="283.0" text="0">
+      <Label fx:id="teamTwoOdds_lb" layoutX="407.0" layoutY="283.0" text="0">
          <font>
             <Font name="Dubai Bold" size="20.0" />
          </font>
